@@ -41,7 +41,11 @@ func init() {
 func main() {
 	router := mux.NewRouter()
 
-	router.HandleFunc("/", handler.PassthroughHandler)
+	//router.HandleFunc("/", handler.PassthroughHandler)
+
+    // All routes
+    router.PathPrefix("/").HandlerFunc(handler.PassthroughHandler)
+    http.Handle("/", router)
 
 	// setup CORS
 	c := cors.New(cors.Options{
