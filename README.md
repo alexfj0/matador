@@ -1,6 +1,6 @@
 # Matador
 
-Simplified version of Kodylow/matador
+Simplified but more customizable version of Kodylow/matador
 
 ## Deployment
 
