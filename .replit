@@ -1,0 +1,24 @@
+run = ["go", "run", "main.go"]
+
+entrypoint = "main.go"
+hidden = ["main"]
+
+build = ["go", "build"]
+
+[languages.go]
+pattern = "**/*.go"
+
+[languages.go.languageServer]
+start = "gopls"
+
+[nix]
+channel = "unstable"
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix"]
+
+[deployment]
+run = ["sh", "-c", "./matador"]
+ignorePorts = false
+deploymentTarget = "gce"
+build = ["sh", "-c", "go build"]
